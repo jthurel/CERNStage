@@ -1,0 +1,40 @@
+	#Fill the file with SI system units
+	#Signal Generator
+#Amplitude(V)= AMPLIT
+AMPLIT= 1
+#Frequency(Hz)=FREQUE
+FREQUE=1
+#Offset(V)=OFFSET
+OFFSET=1
+#Waveform=WAVEFO
+WAVEFO=1
+	#Freq.Sweep Ctrl
+#Sweep start(Hz)=OUTPUT
+OUTPUT=1
+#Swepp end(Hz)=
+#Step=
+#Sweep= "SINGLE"
+#Phase convention= -180 to 180
+#G. Ph. Analyser:
+#Speed (slow/medium/fast)=SPEED
+SPEED="slow"
+#Filter= slow/medium/fast
+#Filter dynamics=
+#Offset(DB)=
+
+	#Config:
+	#Chanel 1:
+#Minimum Range=
+#Autoranging=
+#Coupling=
+#Scale factor=
+	#CHanel 2:
+#Minimum Range=
+#Autoranging=
+#Coupling=
+#Scale factor=
+	#Trim Control:
+#Resolution=
+#Ac trim data=
+#Ac level(V)=
+#Tolerance(%)=

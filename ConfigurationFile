@@ -1,0 +1,34 @@
+Fill the file with SI system units
+Signal generator:
+	Amplitude(V)=
+	Frequency(Hz)=
+	Offset(V)=
+	Waveform=
+Freq.Sweep Ctrl:
+	Sweep start(Hz)=
+	Swepp end(Hz)=
+	Step=
+	Sweep= "SINGLE"
+	Phase convention= -180 to 180
+G. Ph. Analyser:
+	Speed= slow/medium/fast
+	Filter= slow/medium/fast
+	Filter dynamics=
+	Offset(DB)=
+
+Config:
+Chanel 1:
+	Minimum Range=
+	Autoranging=
+	Coupling=
+	Scale factor=
+CHanel 2:
+	Minimum Range=
+	Autoranging=
+	Coupling=
+	Scale factor=
+Trim Control:
+	Resolution=
+	Ac trim data=
+	Ac level(V)=
+	Tolerance(%)=
