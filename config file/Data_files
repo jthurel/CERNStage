@@ -1,31 +1,29 @@
 	#Fill the file with SI system units
 	#Signal Generator
 #Sets the output amplitude in Volts for the selected generator. = AMPLIT,amplitude
-AMPLIT,1
+AMPLIT,2.0
 #Sets the output frequency in Hz for the selected generator. = FREQUE,frequency
-FREQUE,1
+FREQUE,1000
 #Sets the output offset in Volts for the selected generator. = OFFSET,offset
-OFFSET,1
+OFFSET,0.005
 #Selects the output waveform for the signal generator. = WAVEFO,type (SINEWA,TRIANG,SQUARE,LEADIN,TRAILI)
 WAVEFO,TRIANG
 	#Freq.Sweep Ctrl
-
 #Sweep start(Hz)=OUTPUT
 #OUTPUT=1
 #Swepp end(Hz)=
 #Step=
-FSWEEP,steps,start,end
+#FSWEEP,steps,start,end
+FSWEEP,50,1,1000
   #Sweep= "SINGLE"
   #Phase convention= -180 to 180
   #Set gain/phase analyser mode. =GAINPH
-  GAINPH
 #Sets the measurement speed =SPEED,value
 SPEED,SLOW
 #Sets the filter time constant and dynamic response. = FILTER,type,dynamics
 FILTER,NORMAL,FIXED
 #Sets the output offset in Volts for the selected generator. = OFFSET,offset
 OFFSET,5
-
 	#Config:
 	#Chanel 1 :
 #Select minimum range and range control for a given input channel. = RANGE,channel,ranging,range

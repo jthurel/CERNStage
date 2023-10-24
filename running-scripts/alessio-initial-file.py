@@ -124,7 +124,7 @@ def start_sweep():
     time.sleep(1)
     ser.write(bytes("MODE,GAINPH", 'UTF-8') + b'\r')
     time.sleep(3)
-    
+
     for key, value in parameters.items():
         if value[1] == 1:
             if value[0] in ZERO:
@@ -191,5 +191,3 @@ while True:
             sweeping()
         case "exit":
             break
-    
-    

@@ -1,0 +1,52 @@
+	#Fill the file with SI system units
+	#Signal Generator
+#Sets the output amplitude in Volts for the selected generator. = AMPLIT,amplitude
+AMPLIT,2.0
+#Sets the output frequency in Hz for the selected generator. = FREQUE,frequency
+FREQUE,ABC
+#Sets the output offset in Volts for the selected generator. = OFFSET,offset
+OFFSET,1.0
+#Selects the output waveform for the signal generator. = WAVEFO,type (SINEWA,TRIANG,SQUARE,LEADIN,TRAILI)
+WAVEFO,TRIANG
+	#Freq.Sweep Ctrl
+#Sweep start(Hz)=OUTPUT
+#OUTPUT=1
+#Swepp end(Hz)=
+#Step=
+#FSWEEP,steps,start,end
+FSWEEP,,1,1000
+  #Sweep= "SINGLE"
+  #Phase convention= -180 to 180
+  #Set gain/phase analyser mode. =GAINPH
+  GAINPH
+#Sets the measurement speed =SPEED,value
+SPEED,SLOW
+#Sets the filter time constant and dynamic response. = FILTER,type,dynamics
+FILTER,NORMAL,FIXED
+#Sets the output offset in Volts for the selected generator. = OFFSET,offset
+OFFSET,5
+	#Config:
+	#Chanel 1 :
+#Select minimum range and range control for a given input channel. = RANGE,channel,ranging,range
+RANGE,CH1,MANUAL,3V
+#Minimum Range=
+#Autoranging=
+#Selects the input coupling for a given input channel. = COUPLI,channel,coupling
+COUPLI,CH1,AC+DC
+#Set a multiplying scale factor for a given input channel = SCALE,channel,factor
+SCALE,CH1,10
+	#CHanel 2:
+#Select minimum range and range control for a given input channel. = RANGE,channel,ranging,range
+RANGE,CH2,MANUAL,3V
+#Minimum Range=
+#Autoranging=
+#Selects the input coupling for a given input channel. = COUPLI,channel,coupling
+COUPLI,CH2,AC+DC
+#Set a multiplying scale factor for a given input channel = SCALE,channel,factor
+SCALE,CH2,10
+	#Trim Control:
+  #Resolution=
+#Sets the specified signal level, tolerance and input channel. for the ac control (amplitude compression). = ACTRIM,channel,level,tolerance
+ACTRIM,CH1,1.0,5
+#Sets the specified signal level, tolerance and input channel. for the dc control (amplitude compression). = DCTRIM,channel,level,tolerance
+DCTRIM,CH1,0.15,10

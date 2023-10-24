@@ -1,8 +1,10 @@
+# Initialisez une variable booléenne pour vérifier si validation est égal à zéro
+validation_zero = False
 import tkinter as tk
 from tkinter import filedialog
 import serial
 ser = serial.Serial('/dev/ttyUSB0', baudrate=19200, timeout=1)
-retour="The data has been received by the device"
+#validation = 0
 
 def lire_fichier_sans_commentaires(filepath):
     lignes_lues = []
@@ -22,7 +24,7 @@ def lire_fichier_sans_commentaires(filepath):
     return lignes_lues
 
 def select_file():
-    global retour
+    global validation
     file_path = filedialog.askopenfilename()
     if file_path:
         label.config(text=f"Fichier sélectionné : {file_path}")
@@ -39,38 +41,33 @@ def select_file():
                 ser.write(bytes("*ESR?", 'utf-8') + b'\r')
                 response = ser.readline().decode('ascii')
                 #print (response)
-                if response.strip() != '0': #If the answer is not 0 that means there is a probleme in the config file
-                    print("problem on your config file : ",command, response) #Where is the probleme in the config file
-                    retour= "please correct your config file"
+
+
+                while True:
+                    response = ser.readline().decode('ascii')
+                    print(response)
+
+                    if response.strip() == '0':
+                        if not validation_zero:  # Si c'est la première fois que validation est zéro
+                            validation_zero = True
+                            print("Attention")
+                    else:
+                        validation_zero = False  # Réinitialisez la condition lorsque validation n'est pas zéro
+
+                    #print(command, response)  # Faites ce que vous devez faire avec command et response ici
+
+
+                #if response.strip() == 0:
+                #    validation = 1
+                #if response.strip() != '0': #If the answer is not 0 that means there is a probleme in the config file
+                #    validation = 0
+                #    print("problem on your config file : ",command, response) #Where is the probleme in the config file
                 #if ser.readline().decode('ascii')!=0:  # problème reponse=0 mais !=0 car 0 ascii != 0
                 #    print ( command , ser.readline().decode('ascii'))
-    print (retour)
 
 # Création de la fenêtre principale
 root = tk.Tk()
 root.title("Selection of configuration file")
-
-#Test bouton start:
-# Définition de la fonction Start_Sweep
-def Start_Sweep():
-    with serial.Serial('/dev/ttyUSB0', baudrate=19200, timeout=2) as ser:
-        ser.write(bytes("START", 'utf-8') + b'\r')
-
-# Création d'un bouton "Start"
-start_button = tk.Button(root, text="Start", command=Start_Sweep)
-start_button.pack(pady=20)
-
-#Test bouton stop:
-# Définition de la fonction Stop_Sweep
-def Stop_Sweep():
-    with serial.Serial('/dev/ttyUSB0', baudrate=19200, timeout=2) as ser:
-        ser.write(bytes("STOP", 'utf-8') + b'\r')
-
-# Création d'un bouton "Stop"
-stop_button = tk.Button(root, text="Stop", command=Stop_Sweep)
-stop_button.pack(pady=20)
-
-
 
 # Création d'un bouton pour sélectionner un fichier
 select_button = tk.Button(root, text="Select a configuration file", command=select_file)
