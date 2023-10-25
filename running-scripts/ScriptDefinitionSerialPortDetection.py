@@ -19,11 +19,11 @@ def port_detect():
     return None # return none if no port found
 
 # Exemple d'utilisation
-port_trouve = port_detect()
-if port_trouve:
-    print(f"Port série correspondant trouvé : {port_trouve}")
-else:
-    print("Aucun port série correspondant trouvé.")
+#port_trouve = port_detect()
+#if port_trouve:
+#    print(f"Port série correspondant trouvé : {port_trouve}")
+#else:
+#    print("Aucun port série correspondant trouvé.")
 
-port=port_detect()
-print(port)
+#port=port_detect()
+#print(port)
