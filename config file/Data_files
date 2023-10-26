@@ -9,6 +9,8 @@ OFFSET,0.005
 #Selects the output waveform for the signal generator. = WAVEFO,type (SINEWA,TRIANG,SQUARE,LEADIN,TRAILI)
 WAVEFO,TRIANG
 	#Freq.Sweep Ctrl
+#Sets the fundamental operating mode of the instrument. = MODE,type [SIGGEN(signal generator only) VRMS(rms voltmeter) SCOPE(oscilloscope) GAINPH(gain/phase analyser) VECTOR(vector voltmeter)PHASE(phase meter) PSD(phase sensitive detector) POWER(power meter) SLM(selective level meter) LCR(LCR meter) HARMON(harmonic analyser) TXA(transformer analyser)]
+MODE,GAINPH
 #Sweep start(Hz)=OUTPUT
 #OUTPUT=1
 #Swepp end(Hz)=

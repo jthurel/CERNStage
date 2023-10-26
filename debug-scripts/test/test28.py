@@ -1,26 +1,22 @@
 import tkinter as tk
 from tkinter import filedialog
 import os
-import time
 import serial
+import time
 import serial.tools.list_ports
 import numpy as np
 import matplotlib.pyplot as plt
 from tkinter import messagebox
-
 ser = serial.Serial('/dev/ttyUSB0', baudrate=19200, timeout=1)
 #l'ordre compte
-#ser.write(bytes("OUTPUT,ON", 'utf-8') + b'\r')
-#ser.write(bytes("MODE,GAINPH", 'utf-8') + b'\r')
-#ser.write(bytes("FSWEEP,10,10,1000", 'utf-8') + b'\r')
-#ser.write(bytes("AMPLIT,3.0", 'utf-8') + b'\r')
-#ser.write(bytes("FREQUE,500", 'utf-8') + b'\r')
-#ser.write(bytes("OFFSET,1", 'utf-8') + b'\r')
-#ser.write(bytes("WAVEFO,SINEWA", 'utf-8') + b'\r')
-ser.write(bytes("START", 'utf-8') + b'\r')
-#ser.write(bytes("*WAI", 'utf-8') + b'\r')
+ser.write(bytes("OUTPUT,ON", 'utf-8') + b'\r')
+ser.write(bytes("MODE,GAINPH", 'utf-8') + b'\r')
+ser.write(bytes("FSWEEP,10,10,1000", 'utf-8') + b'\r')
 
-def Download_Data():
+ser.write(bytes("START", 'utf-8') + b'\r')
+ser.write(bytes("*WAI", 'utf-8') + b'\r')
+
+def upload_config():
     #global state
     results = ""
     ser.reset_input_buffer()

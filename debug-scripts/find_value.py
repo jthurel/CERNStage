@@ -17,9 +17,9 @@ def find(fichier, mot, position):
         print(f"Une erreur s'est produite : {str(e)}")
 
 # Exemple d'utilisation
-fichier = '/home/jthurel/Documents/CERNScripts/config file/Data_files'  # Remplacez par le nom de votre fichier
-mot = 'FSWEEP'  # Remplacez par le mot que vous voulez chercher
-position = 3  # Remplacez par le nombre de virgules à ignorer
+fichier = '/home/jthurel/Documents/CERNScripts/config file/compact_config'  # Remplacez par le nom de votre fichier
+mot = 'WAVEFO'  # Remplacez par le mot que vous voulez chercher
+position = 0  # Remplacez par le nombre de virgules à ignorer
 
 valeur = find(fichier, mot, position)
 

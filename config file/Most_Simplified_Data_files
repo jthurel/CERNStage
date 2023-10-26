@@ -1,7 +1,7 @@
 	#Fill the file with SI system units
 	#Signal Generator
 #Sets the output amplitude in Volts for the selected generator. = AMPLIT,amplitude
-AMPLIT,2.5
+AMPLIT,2.0
 #Sets the output frequency in Hz for the selected generator. = FREQUE,frequency
 FREQUE,1000
 #Sets the output offset in Volts for the selected generator. = OFFSET,offset

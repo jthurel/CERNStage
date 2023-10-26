@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 import os
 
+^
 def upload_config():
     selected_file = []  # Initialize selected_file as an empty list
     file_path = filedialog.askopenfilename()
